@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by Summer Guevarra of Sodium</h2>
+   <!-- Enter your HTML tags below  but before the opening script tag -->
+     <p>Guess the Number:**** </p> 
+
+    <p>The number 1 to 100 </p>
+    <label> Enter your guess: </label>
+    <input id="in1" type ="text" placeholder="Number"> <br> 
+  <br>
+    <button onclick="checkIt()">Check It!</button> <br>
+<br>
+    <label> Result: </label>
+<p id=output></p>
+    <script>
+       var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+
+        function checkIt() {
+            var guess = parseInt(document.getElementById("in1").value);
+            
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                alert("Please enter a valid number between 1 and 100!");
+                return;
+            }
+            
+            if (guess === dNumber) {
+                output.textContent = "Let's go! You guessed it, " + dNumber + " is the number!";
+            } else if (guess < dNumber) {
+                output.textContent = "Too low! Try again.";
+            } else {
+                output.textContent = "Too high! Try again.";
+            }
+            
+            output.textContent("in1").value = ""; // Clear the input field after checking
+        }
+    </script>
+
+</body>
+
+</html>
