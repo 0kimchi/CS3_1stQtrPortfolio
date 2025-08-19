@@ -23,12 +23,12 @@
             var serviceCharge = parseFloat(document.getElementById("in3").value);
             
             if (isNaN(mealPrice) || isNaN(tip) || isNaN(serviceCharge)) {
-                alert("Please enter valid numbers.");
+                alert("Please enter valid numbers :( .)");
                 return;
             }
             
             var total = ((mealPrice + tip + (serviceCharge / 100 * mealPrice)).toFixed(2));
-            output.textContent = `Your total is ${total}`;
+            output.textContent = `Your total is ${total} :D`;
             
         }
     </script>
