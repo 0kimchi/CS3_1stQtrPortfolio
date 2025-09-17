@@ -1,0 +1,57 @@
+<h1>Guess My Word</h1>
+<p id="wordDisplay"></p>
+<input type="text" id="guessInput" maxlength="1">
+<button onclick="makeGuess()" id="guessBtn">Guess</button>
+<button onclick="playAgain()" id="playAgainBtn" style="display:none;">Play Again</button>
+<p id="message"></p>
+<p id="attempts"></p>
+
+<script>
+  let secretWord = ["s", "l", "e", "e", "p", "y", " ", "s", "u", "m","m", "e", "r"];
+  let guessedWord = ["_", "_", "_", "_", "_", "_", " ", "_", "_", "_", "_", "_", "_"];
+  let attemptsLeft = 5;
+
+  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+  document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+
+  function makeGuess() {
+    let guess = document.getElementById("guessInput").value.toLowerCase();
+    let correct = false;
+
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === guess) {
+        guessedWord[i] = guess;
+        correct = true;
+      }
+    }
+
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    if (correct) {
+      document.getElementById("message").textContent = "✅ Correct!";
+    } else {
+      attemptsLeft--;
+      document.getElementById("message").textContent = "❌ Try again.";
+    }
+    document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+    document.getElementById("guessInput").value = "";
+
+    if (attemptsLeft <= 0) {
+      document.getElementById("message").textContent = "❌ No attempts left! Game over.";
+      document.getElementById("guessBtn").disabled = true;
+      document.getElementById("guessInput").disabled = true;
+      document.getElementById("playAgainBtn").style.display = "inline";
+    }
+  }
+
+  function playAgain() {
+    guessedWord = ["_", "_", "_", "_", "_", "_", " ", "_", "_", "_", "_", "_"];
+    attemptsLeft = 5;
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+    document.getElementById("message").textContent = "";
+    document.getElementById("guessBtn").disabled = false;
+    document.getElementById("guessInput").disabled = false;
+    document.getElementById("guessInput").value = "";
+    document.getElementById("playAgainBtn").style.display = "none";
+  }
+</script>
