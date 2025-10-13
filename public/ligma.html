@@ -1,0 +1,11 @@
+<h1>My Favorite Adopt Me Pets</h1>
+<ul id="Adoptmepets"></ul>
+
+<script>
+  let pets = ["leopard shark", "parrot", "munchkin cat", "Wren" ];
+  let list = document.getElementById("Adoptmepets");
+
+  for (let i = 0; i < pets.length; i++) {
+    list.innerHTML += `<li>${pets[i]}</li>`;
+  }
+</script>
