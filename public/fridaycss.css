@@ -1,0 +1,85 @@
+.sussybaka{
+    margin: 10px;
+     padding: 20px;
+    background-color: rgb(41, 1, 1);
+    align-items: center;
+ 
+}
+
+    .sussybaka div {
+     align-items:center;
+    margin:-10px;
+    padding:-20px;
+  
+  background-color: rgb(41, 1, 1);
+}
+        table {
+        width: 40%;
+        margin: 0 auto 40px auto;
+        border: 10px solid rgb(41, 2, 2);
+        border-collapse: collapse;
+        
+        }
+         th, td {
+            text-align: center;
+            border:10px solid rgb(41, 2, 2);
+            border-collapse: collapse;
+            
+        } 
+        body {
+            background-color: rgb(81, 3, 3);
+        }
+        h1, h5, h6, p, footer {
+            color: white;
+            text-align: center;
+           
+          
+        
+        }
+        th, td {
+            color: white;
+            padding: 10px;
+        }
+        th {
+            color: white;
+            text-align: left;
+        }
+        h3 {
+  text-align: center;
+  color: #333;
+}
+
+iframe {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #240505;
+  border-radius: 10px;
+}
+
+img {
+  display: block;
+  margin: 0 auto 30px auto;
+  border-radius: 10px;
+  border: 3px solid #250202;
+}
+        body {
+  font-family: "Playfair Display", Arial, sans-serif;
+  margin: 5;
+  padding: 5;
+  color: #ffffff;
+        }
+
+    a {
+  color: #ffffff;
+  text-decoration: wavy underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #380404;
+}
