@@ -1,203 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Rating</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: rgb(198, 198, 198)
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Rating</title>
 
-        header {
-            background: #3f0000;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
+<style>
 
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#111;
+    color:#c6c6c6;
+}
 
-        .recommendation-form {
-            background: #202020;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
+header{
+    background:#3f0000;
+    color:white;
+    padding:1rem;
+    text-align:center;
+}
 
-        .recommendation-form input,
-        .recommendation-form textarea,
-        .recommendation-form button {
-            width: 100%;
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            
-        }
+.container{
+    max-width:1200px;
+    margin:2rem auto;
+    padding:1rem;
+}
 
-        .recommendation-form label {
-            font-weight: bold;
-        }
+.recommendation-form{
+    background:#202020;
+    padding:1rem;
+    border-radius:8px;
+    margin-bottom:2rem;
+}
 
-        .stars {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 1rem;
-        }
+.recommendation-form input,
+.recommendation-form textarea,
+.recommendation-form button{
+    width:100%;
+    margin-bottom:1rem;
+    padding:0.5rem;
+    border-radius:4px;
+    border:1px solid #ccc;
+}
 
-        .stars span {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #ccc;
-        }
+.recommendation-form label{
+    font-weight:bold;
+}
 
-        .stars span.selected {
-            color: gold;
-        }
+.stars{
+    display:flex;
+    gap:5px;
+    margin-bottom:1rem;
+}
 
-        .padlet {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-        }
+.stars span{
+    font-size:1.5rem;
+    cursor:pointer;
+    color:#ccc;
+}
 
-        .padlet-item {
-            background: #fff;
-            color: #111
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.stars span.selected{
+    color:gold;
+}
 
-        .padlet-item h3 {
-            margin: 0 0 0.3rem;
-            color: #111
-        }   
+.padlet{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:1rem;
+}
 
-        .padlet-item p {
-            margin: 0.3rem 0;
-            color: #111
-        }
+.padlet-item{
+    background:white;
+    color:#111;
+    padding:1rem;
+    border-radius:8px;
+}
 
-        .padlet-item .rating {
-            color: gold;
-        }
+.padlet-item .rating{
+    color:gold;
+}
 
-        .padlet-item .user {
-    font-size: 0.9rem;
-    color: #820000;
-    font-weight: bold;
+.padlet-item .user{
+    font-size:0.9rem;
+    color:#820000;
+    font-weight:bold;
+}
+
+.delete-btn{
+    margin-top:8px;
+    padding:6px;
+    border:none;
+    background:#b30000;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
 }
 
 footer{
-    text-align: center;
-    padding: 1rem;
-    background: #3f0000;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    text-align:center;
+    padding:1rem;
+    background:#3f0000;
+    color:white;
+    position:fixed;
+    bottom:0;
+    width:100%;
 }
-    </style>
+
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Movie Rating</h1>
-    </header>
-    <div class="container">
-        <div class="recommendation-form">
-            <h2>Add Your Rating!</h2>
-            <form id="recommendationForm">
-    <label for="userName">Your Name:</label>
-    <input type="text" id="userName" name="userName" required>
 
-    <label for="movieName">Movie Name, Year and Genre:</label>
-    <input type="text" id="movieName" name="movieName" required>
+<header>
+<h1>Movie Rating</h1>
+</header>
 
-    <label for="rating">Rating:</label>
-    <div class="stars" id="stars">
-        <span data-value="1">★</span>
-        <span data-value="2">★</span>
-        <span data-value="3">★</span>
-        <span data-value="4">★</span>
-        <span data-value="5">★</span>
-    </div>
+<div class="container">
 
-    <label for="thoughts">Your Thoughts:</label>
-    <textarea id="thoughts" name="thoughts" rows="4" required></textarea>
+<div class="recommendation-form">
 
-    <button type="submit">Submit</button>
+<h2>Add Your Rating!</h2>
+
+<form id="recommendationForm">
+
+<label>Your Name:</label>
+<input type="text" id="userName" required>
+
+<label>Movie Name, Year and Genre:</label>
+<input type="text" id="movieName" required>
+
+<label>Rating:</label>
+
+<div class="stars" id="stars">
+<span data-value="1">★</span>
+<span data-value="2">★</span>
+<span data-value="3">★</span>
+<span data-value="4">★</span>
+<span data-value="5">★</span>
+</div>
+
+<button type="submit">Submit</button>
+
 </form>
 
-        </div>
+</div>
 
-        <div class="padlet" id="padlet">
-        </div>
-    </div>
+<div class="padlet" id="padlet"></div>
 
-</script>
+</div>
 
-   <script>
-    
-const stars = document.querySelectorAll(".stars span");
-let selectedRating = 0;
+<script>
 
-stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
-        selectedRating = index + 1;
+const stars=document.querySelectorAll(".stars span");
+let selectedRating=0;
+
+stars.forEach((star,index)=>{
+    star.addEventListener("click",()=>{
+        selectedRating=index+1;
         updateStars();
     });
 });
 
-function updateStars() {
-    stars.forEach((star, index) => {
-        star.classList.toggle("selected", index < selectedRating);
+function updateStars(){
+    stars.forEach((star,index)=>{
+        star.classList.toggle("selected",index<selectedRating);
     });
 }
 
-const form = document.getElementById("recommendationForm");
-const padlet = document.getElementById("padlet");
+const form=document.getElementById("recommendationForm");
+const padlet=document.getElementById("padlet");
 
-form.addEventListener("submit", (e) => {
+let movies={};
+
+form.addEventListener("submit",(e)=>{
+
     e.preventDefault();
 
-    const userName = document.getElementById("userName").value;
-    const movieName = document.getElementById("movieName").value;
-    const thoughts = document.getElementById("thoughts").value;
+    const userName=document.getElementById("userName").value;
+    const movieName=document.getElementById("movieName").value;
 
-    if (selectedRating === 0) {
+
+    if(selectedRating===0){
         alert("Please select a rating!");
         return;
     }
 
-    const padletItem = document.createElement("div");
-    padletItem.classList.add("padlet-item");
+    if(movies[movieName]){
 
-    padletItem.innerHTML = `
+        let movie=movies[movieName];
+
+        movie.rating=(movie.rating+selectedRating)/2;
+
+        movie.count+=1;
+
+        movie.element.querySelector(".rating").innerHTML=
+        "★".repeat(Math.round(movie.rating))+
+        "☆".repeat(5-Math.round(movie.rating));
+
+        movie.element.querySelector(".user").innerText=
+        "🎬 "+userName+" updated rating:";
+
+    }
+
+    else{
+
+        const padletItem=document.createElement("div");
+        padletItem.classList.add("padlet-item");
+
+        padletItem.innerHTML=`
         <p class="user">🎬 ${userName} rates:</p>
         <h3>${movieName}</h3>
-        <p class="rating">
-            ${"★".repeat(selectedRating)}${"☆".repeat(5 - selectedRating)}
-        </p>
-        <p>${thoughts}</p>
-    `;
+        <p class="rating">${"★".repeat(selectedRating)}${"☆".repeat(5-selectedRating)}</p>
+        <button class="delete-btn">Delete</button>
+        `;
 
-    padlet.prepend(padletItem);
+        const deleteBtn=padletItem.querySelector(".delete-btn");
+
+        deleteBtn.addEventListener("click",()=>{
+
+            if(confirm("Are you sure you want to delete?")){
+                padletItem.remove();
+                delete movies[movieName];
+            }
+
+        });
+
+        padlet.prepend(padletItem);
+
+        movies[movieName]={
+            rating:selectedRating,
+            count:1,
+            element:padletItem
+        };
+
+    }
 
     form.reset();
-    selectedRating = 0;
+    selectedRating=0;
     updateStars();
+
 });
+
 </script>
 
 </body>
