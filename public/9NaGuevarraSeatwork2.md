@@ -94,7 +94,7 @@
 
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
 
-     The notice appears on top because it has a higher z-index than the content. If the values are swapped, the content will appear on top instead.
+     #### The notice appears on top because it has a higher z-index than the content. If the values are swapped, the content will appear on top instead.
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
